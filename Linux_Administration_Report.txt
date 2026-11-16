@@ -1,0 +1,120 @@
+=========================================
+       LINUX ADMINISTRATION LAB
+=========================================
+
+Author: Mayuresh Mhatre
+Operating System: Ubuntu 24.04.5 LTS
+Environment: Oracle VirtualBox
+Shell: Bash
+
+-----------------------------------------
+1. SYSTEM INVENTORY
+-----------------------------------------
+
+Created a Bash script to collect:
+
+- Operating system information
+- Hostname and username
+- Kernel version
+- IP addresses
+- Memory usage
+- Disk usage
+- System uptime
+
+Script: system_inventory.sh
+
+-----------------------------------------
+2. USER MANAGEMENT
+-----------------------------------------
+
+Created a user management script.
+
+Tasks performed:
+
+- Created a new Linux user
+- Configured user password
+- Verified UID and GID
+- Checked home directory
+- Verified login shell
+
+Test User: labstudent
+
+Script: user_manager.sh
+
+-----------------------------------------
+3. RESOURCE MONITORING
+-----------------------------------------
+
+Created a system resource monitoring tool.
+
+Monitored:
+
+- CPU load
+- RAM usage
+- Swap usage
+- Disk utilization
+- Top CPU processes
+- Top memory processes
+
+Script: resource_monitor.sh
+
+-----------------------------------------
+4. SERVICE MONITORING
+-----------------------------------------
+
+Checked systemd service status.
+
+Services verified:
+
+- SSH
+- Cron
+- NetworkManager
+- UFW
+
+Script: service_monitor.sh
+
+-----------------------------------------
+5. LOG AUDITING
+-----------------------------------------
+
+Used journalctl to inspect:
+
+- System warnings
+- Recent system logs
+- Failed systemd services
+
+Observed GNOME Shell warnings.
+
+Script: log_audit.sh
+
+-----------------------------------------
+6. FIREWALL AUDITING
+-----------------------------------------
+
+Inspected:
+
+- UFW firewall status
+- Firewall rules
+- Listening TCP ports
+- Listening UDP ports
+
+Observed UFW status: Inactive
+
+Script: firewall_audit.sh
+
+-----------------------------------------
+SKILLS DEVELOPED
+-----------------------------------------
+
+- Linux System Administration
+- Bash Scripting
+- User Management
+- Process Monitoring
+- Service Management
+- Log Analysis
+- Firewall Auditing
+- Linux Troubleshooting
+
+=========================================
+          PROJECT COMPLETED
+=========================================
