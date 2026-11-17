@@ -1,178 +1,256 @@
 Linux Administration Lab
 
-A practical Linux system administration toolkit developed using Bash scripting on Ubuntu 24.04.5 LTS.
+A practical Linux system administration project built using Bash scripting on Ubuntu 24.04.5 LTS. This project brings together six utility scripts for system information, user management, resource monitoring, service checks, log auditing, and firewall inspection.
+
+The goal was to practise everyday Linux administration tasks through hands-on automation.
 
 Project Overview
 
-The Linux Administration Lab is a collection of six Bash scripts designed to simplify common Linux system administration and monitoring tasks.
-
-The project combines commonly used Linux commands into reusable scripts, helping administrators inspect system information, manage users, monitor resources, check services, audit system logs, and inspect firewall configurations.
-
-Objectives
-
-- Automate routine Linux administration tasks.
-- Practise Bash scripting and command-line operations.
-- Understand Linux users, permissions, services, and processes.
-- Monitor system resources and inspect system logs.
-- Perform basic firewall and network socket auditing.
-
-Development Environment
-
-Component| Configuration
+Detail| Information
+Project| Linux Administration Lab
 Operating System| Ubuntu 24.04.5 LTS
 Host OS| Windows 11
 Virtualization| Oracle VirtualBox 7.2.22
-Shell| GNU Bash
+Scripting| Bash
 Architecture| x86_64
-Language| Bash Shell Scripting
+Project Type| Linux System Administration
+
+Objectives
+
+- Practise Linux administration using the command line.
+- Automate routine system checks with Bash scripts.
+- Understand Linux users, groups, services, processes, and logs.
+- Inspect system resources and firewall configuration.
+- Organize scripts, configuration files, reports, and evidence in a structured project.
 
 Project Structure
 
 Linux-Administration-Lab/
 │
+├── README.md
+│
 ├── config/
 │   └── services.conf
-│
-├── logs/
 │
 ├── reports/
 │   └── Linux_Administration_Report.txt
 │
-└── scripts/
-    ├── system_inventory.sh
-    ├── user_manager.sh
-    ├── resource_monitor.sh
-    ├── service_monitor.sh
-    ├── log_audit.sh
-    └── firewall_audit.sh
+├── scripts/
+│   ├── system_inventory.sh
+│   ├── user_manager.sh
+│   ├── resource_monitor.sh
+│   ├── service_monitor.sh
+│   ├── log_audit.sh
+│   └── firewall_audit.sh
+│
+└── screenshots/
+    ├── 01_directory_structure.png
+    ├── 02_system_inventory_output.png
+    ├── 03_user_management_output.png
+    ├── 04_resource_monitor_output.png
+    ├── 05_service_monitor_output.png
+    ├── 06_log_audit_output.png
+    ├── 07_firewall_output.png
+    ├── 08_bash_script_list.png
+    ├── 09_project_report_a.png
+    ├── 09_project_report_b.png
+    ├── 09_project_report_c.png
+    └── 10_script_file_permissions.png
 
-Implemented Scripts
+Bash Scripts
 
-1. System Inventory
+1. System Inventory — "system_inventory.sh"
 
-File: "system_inventory.sh"
+Collects and displays important information about the Linux system, including:
 
-Collects essential system information, including:
-
-- Hostname and current username
-- Kernel version and system architecture
-- Ubuntu operating system details
-- System uptime
+- Hostname and logged-in username
+- Operating system and kernel version
+- System architecture and uptime
 - IP address information
-- RAM and disk utilization
+- RAM and disk usage
 
-Commands: "uname", "hostname", "whoami", "ip", "free", "df", "uptime".
+Purpose: Provides a quick overview of the system from one script.
 
-2. User Management
+2. User Management — "user_manager.sh"
 
-File: "user_manager.sh"
+Practises basic Linux user administration:
 
-An interactive menu-driven script for basic Linux user administration.
+- Creates a lab user account.
+- Displays user account information.
+- Checks group membership.
+- Verifies that the user account was created.
 
-- Create Linux user accounts
-- Display existing user information
-- Inspect user group memberships
+Test account: "labstudent"
 
-Commands: "useradd", "adduser", "id", "groups", "getent", "passwd", "sudo".
+Purpose: Understands how Linux user accounts and groups are managed.
 
-A test account named "labstudent" was successfully created and verified.
+3. Resource Monitor — "resource_monitor.sh"
 
-3. Resource Monitoring
+Displays system resource information:
 
-File: "resource_monitor.sh"
+- System uptime and load.
+- Memory usage.
+- Disk usage.
+- Processes consuming CPU and memory.
 
-Displays important system resource information:
+Purpose: Helps inspect system performance and identify resource-intensive processes.
 
-- System uptime and load average
-- RAM utilization
-- Disk utilization
-- Top five CPU-consuming processes
-- Top five memory-consuming processes
+4. Service Monitor — "service_monitor.sh"
 
-Commands: "uptime", "free", "df", "ps", "head".
-
-4. Service Monitoring
-
-File: "service_monitor.sh"
-
-Checks the operational and startup status of selected Linux services:
+Checks the status of selected system services:
 
 - SSH
 - Cron
 - NetworkManager
 - UFW
 
-Commands: "systemctl status", "systemctl is-active", "systemctl is-enabled".
+The monitored services are listed in "config/services.conf".
 
-5. Log Auditing
+Purpose: Practises checking whether important Linux services are running.
 
-File: "log_audit.sh"
+5. Log Audit — "log_audit.sh"
 
-Inspects system logs to help identify potential issues.
+Inspects system logs and reports:
 
-- Displays warning-level messages from the previous 24 hours
-- Checks failed systemd units
-- Displays recent system log activity
+- Warning-level messages.
+- Failed systemd units.
+- Recent system log entries.
 
-Commands: "journalctl", "systemctl --failed", "sudo".
+Purpose: Introduces basic Linux log inspection and troubleshooting.
 
-6. Firewall Auditing
+6. Firewall Audit — "firewall_audit.sh"
 
-File: "firewall_audit.sh"
+Inspects firewall and network-listening information:
 
-Performs basic firewall and network socket inspection.
+- UFW firewall status.
+- Available firewall rules.
+- Listening TCP and UDP sockets.
 
-- Checks UFW firewall status
-- Displays firewall rules
-- Displays numbered firewall rules
-- Identifies listening TCP and UDP ports
+Purpose: Practises checking firewall configuration and listening services. This script performs inspection; it does not change firewall rules.
 
-Commands: "ufw", "ss -tulnp".
+How to Run
 
-The script inspects firewall configuration without modifying firewall rules.
+Clone the repository:
 
-Testing and Validation
+git clone https://github.com/mayureshxp/Linux-Administration-Lab.git
 
-All six scripts were executed and tested in an Ubuntu virtual machine.
+Move into the project directory:
 
-Script| Practical Validation
-System Inventory| System information displayed
-User Manager| Test user created and verified
-Resource Monitor| Resource and process information displayed
-Service Monitor| Selected services checked
-Log Audit| System warnings and failed units inspected
-Firewall Audit| Firewall status and listening sockets inspected
+cd Linux-Administration-Lab
 
-The project was tested in a personal Ubuntu virtual machine, not in a production server environment.
+Make the scripts executable:
 
-Skills Demonstrated
+chmod +x scripts/*.sh
 
-- Ubuntu Linux Administration
-- Bash Shell Scripting
-- Linux User and Group Management
-- System Resource Monitoring
-- Process Inspection
-- systemd Service Management
-- System Log Auditing
-- Basic Firewall Auditing
-- Network Socket Inspection
-- Linux File and Directory Management
-- Virtual Machine-Based Testing
+Run an individual script:
 
-Project Limitations
+./scripts/system_inventory.sh
 
-- This is a basic administration and monitoring toolkit, not an enterprise monitoring platform.
-- The log auditing script identifies and displays information but does not automatically resolve errors.
-- The firewall auditing script inspects firewall settings but does not configure or activate firewall rules.
-- Resource monitoring displays usage information but does not automatically optimize system performance.
-- The project has not been validated on production servers or across multiple Linux distributions.
+Other scripts can be run in the same way:
+
+./scripts/user_manager.sh
+./scripts/resource_monitor.sh
+./scripts/service_monitor.sh
+./scripts/log_audit.sh
+./scripts/firewall_audit.sh
+
+Some administrative operations or system information may require elevated privileges. Where necessary, run the relevant script with "sudo".
+
+Practical Validation
+
+The scripts were executed and checked in the Ubuntu virtual machine.
+
+Script| Practical validation
+System Inventory| System information and resource details displayed
+User Management| "labstudent" account created and verified
+Resource Monitor| CPU, memory, disk, and process information displayed
+Service Monitor| Selected service states checked
+Log Audit| Warning messages, failed units, and recent logs inspected
+Firewall Audit| UFW status, rules, and listening sockets inspected
+
+Screenshots
+
+The following screenshots document the project structure, script outputs, report, and file permissions.
+
+Project Structure
+
+"Project directory structure" (screenshots/01_directory_structure.png)
+
+Script Outputs
+
+System Inventory
+
+"System inventory output" (screenshots/02_system_inventory_output.png)
+
+User Management
+
+"User management output" (screenshots/03_user_management_output.png)
+
+Resource Monitor
+
+"Resource monitor output" (screenshots/04_resource_monitor_output.png)
+
+Service Monitor
+
+"Service monitor output" (screenshots/05_service_monitor_output.png)
+
+Log Audit
+
+"Log audit output" (screenshots/06_log_audit_output.png)
+
+Firewall Audit
+
+"Firewall audit output" (screenshots/07_firewall_output.png)
+
+Project Files and Documentation
+
+Bash Scripts
+
+"Bash script list" (screenshots/08_bash_script_list.png)
+
+Project Report — Part A
+
+"Project report part A" (screenshots/09_project_report_a.png)
+
+Project Report — Part B
+
+"Project report part B" (screenshots/09_project_report_b.png)
+
+Project Report — Part C
+
+"Project report part C" (screenshots/09_project_report_c.png)
+
+Script File Permissions
+
+"Script file permissions" (screenshots/10_script_file_permissions.png)
+
+Linux Concepts Practised
+
+- Linux directory structure and file management
+- Bash scripting and command execution
+- User and group administration
+- File permissions and executable scripts
+- System information and resource monitoring
+- Linux services and systemd
+- System log inspection
+- UFW firewall inspection
+- Process and socket monitoring
+- Basic project documentation
+
+Limitations
+
+- Developed and tested in a personal Ubuntu virtual machine.
+- Intended as a learning and demonstration project, not a production administration tool.
+- Scripts provide basic checks and automation; they do not replace a complete monitoring or security solution.
+- Firewall auditing is read-only and does not modify firewall configuration.
 
 Author
 
 Mayuresh Mhatre
 
-GitHub: "@mayureshop" (https://github.com/mayureshop)
+- GitHub: "@mayureshxp" (https://github.com/mayureshxp)
+- Project Repository: "Linux Administration Lab" (https://github.com/mayureshxp/Linux-Administration-Lab)
 
 ---
 
-Developed as a hands-on Linux system administration and Bash scripting project.
+Built as a hands-on project to develop practical Linux system administration and Bash scripting skills.
